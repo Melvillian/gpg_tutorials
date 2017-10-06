@@ -48,7 +48,7 @@ generating a new key in "Expert mode" to allow the needed customization.
 $ gpg --full-gen-key --expert
 ```
 
-The first prompt will ask for the type of key desired.  This is an RSA sign-only key: 
+The first prompt will ask for the type of key desired. Choose "RSA (set your own capabilities)" and toggle all but the Certify capability. This will be the key you certify other PGP keys with: 
 
 ```
 gpg (GnuPG) 2.0.27; Copyright (C) 2015 Free Software Foundation, Inc.
@@ -65,8 +65,41 @@ Please select what kind of key you want:
    (4) RSA (sign only)
    (7) DSA (set your own capabilities)
    (8) RSA (set your own capabilities)
-Your selection? 4
+Your selection? 8
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? s
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? e
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? q
+
 ```
+
+
 
 Enter 4096 for key size. There are few good reasons to have a key size smaller
 than 4096bit given ample available CPU today.
